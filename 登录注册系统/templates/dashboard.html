@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}图书管理系统{% endblock %}
+
+{% block content %}
+<!-- 登录后的主页面，覆盖 base.html 的 content 块 -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-header">
+        <!-- 左侧：欢迎语 + 用户信息 -->
+        <div>
+            <h1>欢迎进入图书管理系统！</h1>
+            <p class="user-info">用户名：{{ username }} 邮箱：{{ email }}</p>
+        </div>
+        <!-- 右侧：操作按钮 -->
+        <div class="actions">
+            <a href="#" class="btn btn-green">个人中心</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-red">退出登录</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

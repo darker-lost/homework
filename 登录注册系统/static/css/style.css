@@ -1,0 +1,260 @@
+/* =========================================
+   全局重置与基础样式
+   作用：清除浏览器默认边距，设置居中布局
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #d1e0f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   提示消息（flash）
+   作用：显示后端 flash() 发送的成功/错误消息
+   ========================================= */
+.flash-messages {
+    margin-bottom: 18px;
+}
+
+.flash {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+.flash.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+/* =========================================
+   登录/注册卡片
+   作用：居中白色卡片，头部渐变色，承载表单
+   ========================================= */
+.auth-card {
+    width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-header {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 26px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-header h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* 用户头像图标 */
+.user-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+}
+
+.auth-body {
+    padding: 34px 36px;
+}
+
+/* =========================================
+   表单组件
+   ========================================= */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* 输入框 + 图标的包裹容器 */
+.input-wrapper {
+    position: relative;
+}
+
+/* 输入框左侧图标 */
+.input-wrapper .icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 18px;
+}
+
+/* 输入框本体：左侧 padding 留出图标空间 */
+.input-wrapper input {
+    width: 100%;
+    padding: 13px 14px 13px 44px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.input-wrapper input::placeholder {
+    color: #bbb;
+}
+
+/* 密码可见性切换按钮（小眼睛） */
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* =========================================
+   提交按钮
+   ========================================= */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    opacity: 0.92;
+}
+
+.btn-primary:active {
+    transform: scale(0.99);
+}
+
+/* =========================================
+   卡片底部（注册/登录跳转链接）
+   ========================================= */
+.auth-footer {
+    text-align: center;
+    padding: 20px 36px 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   登录后主页
+   作用：深色全屏背景，顶部导航栏布局
+   ========================================= */
+.dashboard-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: #2c3e50;
+    color: #fff;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 60px;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #dcdcdc;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* 通用按钮样式 */
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn-green {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-red {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
